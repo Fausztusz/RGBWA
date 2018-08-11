@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="color.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="458.0">
+                     <children>
+                        <Button fx:id="btn_run" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#run" prefHeight="89.0" prefWidth="137.0" text="Run" />
+                        <Button fx:id="btn_reset" layoutX="14.0" layoutY="304.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="136.0" text="Reset" />
+                        <GridPane layoutX="138.0" layoutY="10.0" prefHeight="160.0" prefWidth="452.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.20001220703125" minWidth="10.0" prefWidth="58.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.000048828125" minWidth="10.0" prefWidth="389.2" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="31.19998779296874" minHeight="10.0" prefHeight="31.19998779296874" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="31.19998779296874" minHeight="10.0" prefHeight="31.19998779296874" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="31.19998779296874" minHeight="10.0" prefHeight="31.19998779296874" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="31.19998779296874" minHeight="10.0" prefHeight="31.19998779296874" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="31.19998779296874" minHeight="10.0" prefHeight="31.19998779296874" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Slider fx:id="slider_amber" max="255.0" minorTickCount="1" onDragDetected="#setColor" onDragDropped="#setColor" onDragOver="#setColor" onMouseClicked="#setColor" onMouseDragOver="#setColor" onMouseDragged="#setColor" prefHeight="14.0" prefWidth="302.0" showTickMarks="true" snapToTicks="true" style="-fx-background-color: yellow;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Slider fx:id="slider_green" max="255.0" minorTickCount="1" onDragDetected="#setColor" onDragDropped="#setColor" onDragOver="#setColor" onMouseClicked="#setColor" onMouseDragOver="#setColor" onMouseDragged="#setColor" prefHeight="14.0" prefWidth="302.0" showTickMarks="true" snapToTicks="true" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Slider fx:id="slider_white" max="255.0" minorTickCount="1" onDragDetected="#setColor" onDragDropped="#setColor" onDragOver="#setColor" onMouseClicked="#setColor" onMouseDragOver="#setColor" onMouseDragged="#setColor" prefHeight="14.0" prefWidth="302.0" showTickMarks="true" snapToTicks="true" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Slider fx:id="slider_blue" max="255.0" minorTickCount="1" onDragDetected="#setColor" onDragDropped="#setColor" onDragOver="#setColor" onMouseClicked="#setColor" onMouseDragOver="#setColor" onMouseDragged="#setColor" prefHeight="14.0" prefWidth="302.0" showTickMarks="true" snapToTicks="true" style="-fx-background-color: blue;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Slider fx:id="slider_red" max="255.0" minorTickCount="1" onDragDetected="#setColor" onDragDropped="#setColor" onDragOver="#setColor" onMouseClicked="#setColor" onMouseDragOver="#setColor" onMouseDragged="#setColor" prefHeight="14.0" prefWidth="302.0" showTickMarks="true" snapToTicks="true" style="-fx-background-color: red;" GridPane.columnIndex="1" />
+                              <TextField fx:id="textField_red" onAction="#setColorValue" onInputMethodTextChanged="#setColorValue" onMouseClicked="#highlightText" prefHeight="26.0" prefWidth="193.0">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textField_green" onAction="#setColorValue" onMouseClicked="#highlightText" prefHeight="26.0" prefWidth="193.0" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textField_blue" onAction="#setColorValue" onMouseClicked="#highlightText" prefHeight="26.0" prefWidth="193.0" GridPane.rowIndex="2">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textField_amber" onAction="#setColorValue" onMouseClicked="#highlightText" prefHeight="26.0" prefWidth="193.0" GridPane.rowIndex="4">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="textField_white" onAction="#setColorValue" onMouseClicked="#highlightText" prefHeight="26.0" prefWidth="193.0" GridPane.rowIndex="3">
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <ChoiceBox fx:id="presets" layoutX="14.0" layoutY="29.0" prefHeight="26.0" prefWidth="110.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>
